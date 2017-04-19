@@ -1,0 +1,67 @@
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\pacman.png
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Fonts\Normal.xnb
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellEmpty.xnb
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellO.xnb
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellX.xnb
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CPUO.xnb
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CPUX.xnb
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerO.xnb
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerX.xnb
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Tic-Tac-Toe.exe.config
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Tic-Tac-Toe.exe
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Tic-Tac-Toe.pdb
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\MonoGame.Framework.dll
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.dll
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XAudio2.dll
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.DXGI.dll
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D11.dll
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct2D1.dll
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XInput.dll
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D9.dll
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\MonoGame.Framework.xml
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.xml
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XAudio2.xml
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.DXGI.xml
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D11.xml
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct2D1.xml
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XInput.xml
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D9.xml
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.exe
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.pdb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Tic-Tac-Toe.exe.config
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.exe
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.pdb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\pacman.png
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Fonts\Normal.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellEmpty.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellO.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellX.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CPUO.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CPUX.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerO.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerX.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Tic-Tac-Toe.exe
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Tic-Tac-Toe.pdb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\MonoGame.Framework.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XAudio2.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D11.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.DXGI.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct2D1.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XInput.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.RawInput.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D9.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\MonoGame.Framework.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XAudio2.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D11.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.DXGI.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct2D1.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XInput.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.RawInput.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D9.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.csprojResolveAssemblyReference.cache

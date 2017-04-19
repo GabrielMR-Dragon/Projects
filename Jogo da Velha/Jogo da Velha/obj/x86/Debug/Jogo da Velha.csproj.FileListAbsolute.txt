@@ -1,0 +1,33 @@
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\pacman.png
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellEmpty.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellO.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellX.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\JogadorO.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\JogadorX.xnb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Jogo da Velha.exe
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Jogo da Velha.pdb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\MonoGame.Framework.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XAudio2.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D11.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.DXGI.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct2D1.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XInput.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.RawInput.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D9.dll
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\MonoGame.Framework.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XAudio2.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D11.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.DXGI.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct2D1.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XInput.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.RawInput.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D9.xml
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Jogo da Velha.exe
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Jogo da Velha.pdb
+E:\Aula programação 2D\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Fonts\Normal.xnb
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Jogo da Velha.exe
+E:\GabrielMR\Pós-graduação de especialização em jogos digitais\Aula programação 2D\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Jogo da Velha.pdb
