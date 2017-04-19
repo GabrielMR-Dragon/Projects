@@ -20,6 +20,7 @@ namespace Tic_Tac_Toe
         //Enum
         enum GameState
         {
+            Null,
             Menu,
             PlayerTurn,
             MachineTurn,
@@ -27,7 +28,10 @@ namespace Tic_Tac_Toe
         };
 
         //Current State
-        GameState currentState;
+        GameState currentState = GameState.Null;
+
+        //Timer
+        float stateTimer;
 
         //Flags
         bool gameStarted = false; //Diz se o jogo iniciou ou não.
@@ -55,7 +59,171 @@ namespace Tic_Tac_Toe
         //Posição do mouse
         Vector2 mousePointer;
 
-        //Construtor
+        void enterGameState(GameState newState)
+        {
+            leaveGameState();
+
+            currentState = newState;
+
+            switch (currentState)
+            {
+                case GameState.Menu:
+                    {
+                        board.Clear();
+                    }
+                    break;
+
+                case GameState.PlayerTurn:
+                    {
+
+                    }
+                    break;
+
+                case GameState.MachineTurn:
+                    {
+
+                    }
+                    break;
+
+                case GameState.ShowResults:
+                    {
+
+                    }
+                    break;
+            }
+        }
+
+        void updateGameState(GameTime gameTime)
+        {
+            //Temporizador
+            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            switch (currentState)
+            {
+                case GameState.Menu:
+                    {
+                        if (Mouse.GetState().LeftButton == ButtonState.Pressed && prevMouseState.LeftButton == ButtonState.Released)
+                        {
+                            //Posição do mouse
+                            mousePointer = new Vector2(Mouse.GetState().Position.X,
+                                                       Mouse.GetState().Position.Y);
+
+                            if (buttonStartGamePlayerPlayer.testClick(mousePointer))
+                            {
+                                playerVsPlayer = true;
+                                //gameStarted = true;
+                                //board.setPlayer();
+                                enterGameState(GameState.PlayerTurn);
+                            }
+
+                            else if (buttonStartGamePlayerMachine.testClick(mousePointer))
+                            {
+                                playerVsPlayer = false;
+                                //gameStarted = true;
+                                //board.setPlayer();
+                                enterGameState(GameState.MachineTurn);
+                            }
+
+                            else if (buttonQuit.testClick(mousePointer))
+                                Exit();
+
+                            if (Mouse.GetState().LeftButton == ButtonState.Pressed && prevMouseState.LeftButton == ButtonState.Released)
+                            {
+                                Vector2 pMin = new Vector2(720, 128);
+
+                                Vector2 pMax = pMin + new Vector2(64, 64);
+
+                                if ((mousePointer.X > pMin.X) && (mousePointer.X < pMax.X) &&
+                                    (mousePointer.Y > pMin.Y) && (mousePointer.Y < pMax.Y))
+                                {
+                                    if (machineIsFirst)
+                                        machineIsFirst = false;
+                                    else
+                                        machineIsFirst = true;
+                                }
+                            }
+                        }
+                    }
+                    break;
+
+                case GameState.PlayerTurn:
+                    {
+
+                    }
+                    break;
+
+                case GameState.MachineTurn:
+                    {
+                        //RANDOMIZAR JOGADAS DA MÁQUINA
+
+                        //List<Classes.Board> possibilities = board.getPossibilities(1);
+
+                        //board = possibilities[0];
+
+                        //RANDOMIZAR JOGADAS DA MÁQUINA
+                    }
+                    break;
+
+                case GameState.ShowResults:
+                    {
+
+                    }
+                    break;
+            }
+        }
+
+        void drawGameState(GameTime gameTime)
+        {
+            switch (currentState)
+            {
+                case GameState.Menu:
+                    {
+
+                    }
+                    break;
+
+                case GameState.PlayerTurn:
+                    {
+
+                    }
+                    break;
+
+                case GameState.MachineTurn:
+                    {
+
+                    }
+                    break;
+
+                case GameState.ShowResults:
+                    {
+
+                    }
+                    break;
+            }
+        }
+
+        void leaveGameState()
+        {
+            switch (currentState)
+            {
+                case GameState.Menu:
+                    { }
+                    break;
+
+                case GameState.PlayerTurn:
+                    { }
+                    break;
+
+                case GameState.MachineTurn:
+                    { }
+                    break;
+
+                case GameState.ShowResults:
+                    { }
+                    break;
+            }
+        }
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -67,12 +235,13 @@ namespace Tic_Tac_Toe
             graphics.PreferredBackBufferHeight = 600;
 
             Content.RootDirectory = "Content";
+
+            IsMouseVisible = true;
         }
 
         protected override void Initialize()
         {
             base.Initialize();
-            IsMouseVisible = true;
         }
         
         protected override void LoadContent()
@@ -94,6 +263,9 @@ namespace Tic_Tac_Toe
             buttonStartGamePlayerPlayer = new Classes.UIButton(new Vector2(10, 70), new Vector2(512, 50), cellEmpty, "Jogador Vs. Jogador", fontNormal);
             buttonStartGamePlayerMachine = new Classes.UIButton(new Vector2(10, 140), new Vector2(512, 50), cellEmpty, "Jogador Vs. Máquina", fontNormal);
             buttonQuit = new Classes.UIButton(new Vector2(10, 210), new Vector2(128, 50), cellEmpty, "Sair", fontNormal);
+
+            //Entra em estado inicial
+            enterGameState(GameState.Menu);
         }
 
         protected override void UnloadContent()
@@ -106,10 +278,12 @@ namespace Tic_Tac_Toe
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            if (gameStarted)
-                logicBoard(gameTime);
-            else
-                logicMenu(gameTime);
+            updateGameState(gameTime);
+
+            //if (gameStarted)
+            //    logicBoard(gameTime);
+            //else
+            //    logicMenu(gameTime);
 
             prevMouseState = Mouse.GetState();
 
@@ -372,136 +546,6 @@ namespace Tic_Tac_Toe
                     else if (board.cell[x, y] == 2)
                         spriteBatch.Draw(cellX, cellPos, null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
                 }
-            }
-        }
-
-        void enterGameState(GameState newState)
-        {
-            leaveGameState();
-
-            currentState = newState;
-
-            switch(currentState)
-            {
-                case GameState.Menu:
-                    {
-                    
-                    }
-                    break;
-
-                case GameState.PlayerTurn:
-                    {
-                    
-                    }
-                    break;
-
-                case GameState.MachineTurn:
-                    {
-                    
-                    }
-                    break;
-
-                case GameState.ShowResults:
-                    {
-                    
-                    }
-                    break;
-            }
-        }
-
-        void updateGameState(GameTime gameTime)
-        {
-            switch(currentState)
-            {
-                case GameState.Menu:
-                    {
-
-                    }
-                    break;
-
-                case GameState.PlayerTurn:
-                    {
-
-                    }
-                    break;
-
-                case GameState.MachineTurn:
-                    {
-                        //RANDOMIZAR JOGADAS DA MÁQUINA
-
-                        List<Classes.Board> possibilities = board.getPossibilities(1);
-
-                        board = possibilities[0];
-
-                        //RANDOMIZAR JOGADAS DA MÁQUINA
-                    }
-                    break;
-
-                case GameState.ShowResults:
-                    {
-
-                    }
-                    break;
-            }
-        }
-
-        void drawGameState(GameTime gameTime)
-        {
-            switch(currentState)
-            {
-                case GameState.Menu:
-                    {
-
-                    }
-                    break;
-
-                case GameState.PlayerTurn:
-                    {
-
-                    }
-                    break;
-
-                case GameState.MachineTurn:
-                    {
-
-                    }
-                    break;
-
-                case GameState.ShowResults:
-                    {
-
-                    }
-                    break;
-            }
-        }
-
-        void leaveGameState()
-        {
-            switch(currentState)
-            {
-                case GameState.Menu:
-                    {
-
-                    }
-                    break;
-
-                case GameState.PlayerTurn:
-                    {
-
-                    }
-                    break;
-
-                case GameState.MachineTurn:
-                    {
-
-                    }
-                    break;
-
-                case GameState.ShowResults:
-                    {
-
-                    }
-                    break;
             }
         }
     }
