@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Fonts/Normal.spritefont</SourceFile>
+  <SourceFile>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Fonts/Normal.spritefont</SourceFile>
   <SourceTime>2017-04-19T17:19:05-03:00</SourceTime>
-  <DestFile>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/bin/Windows/Fonts/Normal.xnb</DestFile>
-  <DestTime>2017-04-19T20:18:31.051687-03:00</DestTime>
+  <DestFile>H:/workspace/Jogo da Velha/Jogo da Velha/Content/bin/Windows/Fonts/Normal.xnb</DestFile>
+  <DestTime>2017-04-19T21:15:03.3496569-03:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2015-04-29T14:14:44-03:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

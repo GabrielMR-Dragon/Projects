@@ -4,14 +4,14 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/CellEmpty.png</File>
-    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/CellO.png</File>
-    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/CellX.png</File>
-    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Fonts/Normal.spritefont</File>
-    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerO.png</File>
-    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerX.png</File>
-    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUO.png</File>
-    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUX.png</File>
-    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sounds/Test.wav</File>
+    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CellEmpty.png</File>
+    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CellO.png</File>
+    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CellX.png</File>
+    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Fonts/Normal.spritefont</File>
+    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerO.png</File>
+    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerX.png</File>
+    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUO.png</File>
+    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUX.png</File>
+    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sounds/Test.wav</File>
   </SourceFiles>
 </SourceFileCollection>
