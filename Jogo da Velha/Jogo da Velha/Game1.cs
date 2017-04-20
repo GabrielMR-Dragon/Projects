@@ -85,7 +85,7 @@ namespace Tic_Tac_Toe
 
                 case GameState.ShowResults:
                     {
-                        stateTimer = 3;
+                        stateTimer = 5;
                     }
                     break;
             }
@@ -215,6 +215,9 @@ namespace Tic_Tac_Toe
                             }
                         }
 
+
+                        while (dt <= 1)
+                            dt = contaTempo(gameTime, dt);
                         board = bestPossibility;              //Realiza jogada e altera jogador
                         board.setDepth(board.getDepth() - 1); //Diminui profundidade do tabuleiro
 
@@ -233,6 +236,14 @@ namespace Tic_Tac_Toe
                     }
                     break;
             }
+        }
+
+        float contaTempo(GameTime gameTime, float dt)
+        {
+            if (dt >= 1)
+                return dt;
+            else
+                return contaTempo(gameTime, dt + (float)gameTime.ElapsedGameTime.TotalSeconds);
         }
 
         void drawGameState(GameTime gameTime)
@@ -579,7 +590,7 @@ namespace Tic_Tac_Toe
             spriteBatch.DrawString(
               fontNormal,
               text,
-              new Vector2(100, 10),  //position
+              new Vector2((800 - fontNormal.MeasureString(text).X) / 2, (200 - fontNormal.MeasureString(text).Y) / 2),  //position
               Color.White,           //color
               0.0f,                  //rotation
               Vector2.Zero,          //origin (pivot)
