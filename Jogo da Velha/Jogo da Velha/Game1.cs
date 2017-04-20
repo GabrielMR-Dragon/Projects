@@ -35,10 +35,8 @@ namespace Tic_Tac_Toe
         float stateTimer;
 
         //Flags
-        bool gameStarted = false; //Diz se o jogo iniciou ou não.
         bool playerVsPlayer; //Diz se é humano versus humano.
         bool machineIsFirst = true; //Diz se a máquina é o primeiro jogador ou não.
-        bool gameFinished; //Diz se o jogo terminou.
 
         //Sprites
         Texture2D cellEmpty;
@@ -78,25 +76,16 @@ namespace Tic_Tac_Toe
                     break;
 
                 case GameState.PlayerTurn:
-                    {
-
-                    }
+                    { }
                     break;
 
                 case GameState.MachineTurn:
-                    {
-                        //printBoard();
-
-                        if (board.isGameOver())
-                            enterGameState(GameState.ShowResults);
-                        else
-                            enterGameState(GameState.PlayerTurn);
-                    }
+                    { }
                     break;
 
                 case GameState.ShowResults:
                     {
-
+                        stateTimer = 3;
                     }
                     break;
             }
@@ -120,16 +109,14 @@ namespace Tic_Tac_Toe
                             if (buttonStartGamePlayerPlayer.testClick(mousePointer))
                             {
                                 playerVsPlayer = true;
-                                //gameStarted = true;
-                                //board.setPlayer();
+                                board.setPlayer();
                                 enterGameState(GameState.PlayerTurn);
                             }
 
                             else if (buttonStartGamePlayerMachine.testClick(mousePointer))
                             {
                                 playerVsPlayer = false;
-                                //gameStarted = true;
-                                //board.setPlayer();
+                                board.setPlayer();
                                 enterGameState(GameState.MachineTurn);
                             }
 
@@ -157,25 +144,92 @@ namespace Tic_Tac_Toe
 
                 case GameState.PlayerTurn:
                     {
+                        if (Mouse.GetState().LeftButton == ButtonState.Pressed && prevMouseState.LeftButton == ButtonState.Released)
+                        {
+                            //Posição do mouse
+                            mousePointer = new Vector2(Mouse.GetState().Position.X,
+                                                       Mouse.GetState().Position.Y);
+                        
+                            if (buttonQuit.testClick(mousePointer))
+                                enterGameState(GameState.Menu);
+                        
+                            for (int y = 0; y < 3; y++)
+                            {
+                                for (int x = 0; x < 3; x++)
+                                {
+                                    Vector2 pMin = new Vector2(x * 64 + getScreenSize(true, 64, 3),
+                                                               y * 64 + getScreenSize(false, 64, 3));
+                        
+                                    Vector2 pMax = pMin + new Vector2(64, 64);
+                        
+                                    if ((mousePointer.X > pMin.X) && (mousePointer.X < pMax.X) &&
+                                        (mousePointer.Y > pMin.Y) && (mousePointer.Y < pMax.Y) && board.cell[x, y] == 0)
+                                    {
+                                        board.cell[x, y] = board.getPlayer();
+                        
+                                        board.setPlayer();                    //Altera o jogador
+                                        board.setDepth(board.getDepth() - 1); //Diminui a profunidade do tabuleiro
+                        
+                                        if (board.isGameOver())
+                                            enterGameState(GameState.ShowResults);
+                                        else if (playerVsPlayer)
+                                            enterGameState(GameState.PlayerTurn);
+                                        else
+                                            enterGameState(GameState.MachineTurn);
 
+                                        break;
+                                    }
+                                }
+                            }
+                        }
                     }
                     break;
 
                 case GameState.MachineTurn:
                     {
-                        //RANDOMIZAR JOGADAS DA MÁQUINA
-
+                        ////LÓGICA DIFICULDADE BAIXA:
+                        ////RANDOMIZAR JOGADAS DA MÁQUINA
+                        //
                         //List<Classes.Board> possibilities = board.getPossibilities(1);
-
+                        //
                         //board = possibilities[0];
+                        //
+                        ////RANDOMIZAR JOGADAS DA MÁQUINA
 
-                        //RANDOMIZAR JOGADAS DA MÁQUINA
+                        //LÓGICA DIFICULDADE ALTA
+
+                        List<Classes.Board> possibilities = board.getPossibilities(board.getPlayer());
+
+                        Classes.Board bestPossibility = null;
+                        int bestScore = -9999999;
+
+                        foreach (Classes.Board possibility in possibilities)
+                        {
+                            possibility.setPlayer(); //Altera para o jogador humano
+                            int temporary = Classes.Board.Minimax(possibility, possibility.getDepth() - 1, possibility.getPlayer()); //Diminui profundidade
+
+                            if (temporary > bestScore)
+                            {
+                                bestScore = temporary;
+                                bestPossibility = possibility;
+                            }
+                        }
+
+                        board = bestPossibility;              //Realiza jogada e altera jogador
+                        board.setDepth(board.getDepth() - 1); //Diminui profundidade do tabuleiro
+
+                        if (board.isGameOver())
+                            enterGameState(GameState.ShowResults);
+                        else
+                            enterGameState(GameState.PlayerTurn);
                     }
                     break;
 
                 case GameState.ShowResults:
                     {
-
+                        stateTimer -= dt;
+                        if (stateTimer <= 0)
+                            enterGameState(GameState.Menu);
                     }
                     break;
             }
@@ -193,19 +247,19 @@ namespace Tic_Tac_Toe
 
                 case GameState.PlayerTurn:
                     {
-
+                        printBoard(gameTime);
                     }
                     break;
 
                 case GameState.MachineTurn:
                     {
-
+                        printBoard(gameTime);
                     }
                     break;
 
                 case GameState.ShowResults:
                     {
-
+                        printResults(gameTime);
                     }
                     break;
             }
@@ -237,9 +291,7 @@ namespace Tic_Tac_Toe
         {
             graphics = new GraphicsDeviceManager(this);
 
-            ///
-            /// Mudar o tamanho do tabuleiro
-            ///
+            //Mudar o tamanho do tabuleiro
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 600;
 
@@ -292,11 +344,6 @@ namespace Tic_Tac_Toe
 
             updateGameState(gameTime);
 
-            //if (gameStarted)
-            //    logicBoard(gameTime);
-            //else
-            //    logicMenu(gameTime);
-
             prevMouseState = Mouse.GetState();
 
             base.Update(gameTime);
@@ -309,11 +356,7 @@ namespace Tic_Tac_Toe
             //Inicia desenhos
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied);
 
-            //if (gameStarted)
-            //    printBoard(gameTime);
-            //else
-            //    printMenu(gameTime);
-
+            //Desenha o estado atual do jogo
             drawGameState(gameTime);
 
             //Finaliza desenhos
@@ -341,49 +384,6 @@ namespace Tic_Tac_Toe
             return size;
         }
 
-        private void logicMenu(GameTime gameTime) //Lógica do menu principal
-        {
-            //Posição do mouse
-            mousePointer = new Vector2(Mouse.GetState().Position.X,
-                                       Mouse.GetState().Position.Y);
-
-            if (Mouse.GetState().LeftButton == ButtonState.Pressed && prevMouseState.LeftButton == ButtonState.Released)
-            {
-                if (buttonStartGamePlayerPlayer.testClick(mousePointer))
-                {
-                    playerVsPlayer = true;
-                    gameStarted = true;
-                    board.setPlayer();
-                }
-
-                else if (buttonStartGamePlayerMachine.testClick(mousePointer))
-                {
-                    playerVsPlayer = false;
-                    gameStarted = true;
-                    board.setPlayer();
-                }
-
-                else if (buttonQuit.testClick(mousePointer))
-                    Exit();
-
-                if(Mouse.GetState().LeftButton == ButtonState.Pressed && prevMouseState.LeftButton == ButtonState.Released)
-                {
-                    Vector2 pMin = new Vector2(720, 128);
-
-                    Vector2 pMax = pMin + new Vector2(64, 64);
-
-                    if ((mousePointer.X > pMin.X) && (mousePointer.X < pMax.X) &&
-                        (mousePointer.Y > pMin.Y) && (mousePointer.Y < pMax.Y))
-                    {
-                        if (machineIsFirst)
-                            machineIsFirst = false;
-                        else
-                            machineIsFirst = true;
-                    }
-                }
-            }
-        }
-
         private void printMenu(GameTime gameTime) //Desenho do menu
         {
             buttonStartGamePlayerPlayer.Draw(spriteBatch);
@@ -400,6 +400,8 @@ namespace Tic_Tac_Toe
                 spriteBatch.Draw(cellO, cellPos, Color.Blue);
         }
 
+
+        //MÉTODO OBSOLETO: NÃO UTILIZADO
         private void logicBoard(GameTime gameTime) //Lógica do tabuleiro
         {
             if (playerVsPlayer)
@@ -412,7 +414,6 @@ namespace Tic_Tac_Toe
 
                     if (buttonQuit.testClick(mousePointer))
                     {
-                        gameStarted = false;
                         board.Clear();
                         return;
                     }
@@ -472,7 +473,6 @@ namespace Tic_Tac_Toe
 
                     if (buttonQuit.testClick(mousePointer))
                     {
-                        gameStarted = false;
                         board.Clear();
                         return;
                     }
@@ -519,7 +519,7 @@ namespace Tic_Tac_Toe
             buttonQuit.Draw(spriteBatch);
 
             string text = "Tic-Tac-Toe!";
-            string currentTime = "Elapsed time: " + (int)gameTime.TotalGameTime.Seconds;
+            string currentTime = "Elapsed time: ";
 
             Vector2 textSize = fontNormal.MeasureString(text);
             Vector2 timeSize = fontNormal.MeasureString(currentTime);
@@ -561,6 +561,34 @@ namespace Tic_Tac_Toe
                         spriteBatch.Draw(cellX, cellPos, null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
                 }
             }
+        }
+
+        private void printResults(GameTime gameTime)
+        {
+            string text;
+
+            if (board.gameOver() == 1 && playerVsPlayer)
+                text = "Player 1 wins!";
+            else if (board.gameOver() == 1 && playerVsPlayer == false)
+                text = "Machine wins!";
+            else if (board.gameOver() == 2)
+                text = "Player 2 wins!";
+            else
+                text = "It's a draw!";
+
+            spriteBatch.DrawString(
+              fontNormal,
+              text,
+              new Vector2(100, 10),  //position
+              Color.White,           //color
+              0.0f,                  //rotation
+              Vector2.Zero,          //origin (pivot)
+              Vector2.One,           //scale
+              SpriteEffects.None,
+              0.0f
+            );
+
+            printBoard(gameTime);
         }
     }
 }

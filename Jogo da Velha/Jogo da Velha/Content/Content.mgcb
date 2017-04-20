@@ -21,6 +21,7 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=False
 /processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/CellEmpty.png
 
@@ -32,6 +33,7 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=False
 /processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/CellO.png
 
@@ -43,12 +45,14 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=False
 /processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/CellX.png
 
 #begin Fonts/Normal.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:Fonts/Normal.spritefont
 
@@ -60,6 +64,7 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=False
 /processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/PlayerO.png
 
@@ -71,6 +76,7 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=False
 /processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/PlayerX.png
 
@@ -82,6 +88,7 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=False
 /processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/CPUO.png
 
@@ -93,12 +100,13 @@
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=False
 /processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/CPUX.png
 
-#begin Sounds/Test.wav
+#begin Sounds/test.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sounds/Test.wav
+/build:Sounds/test.wav
 
