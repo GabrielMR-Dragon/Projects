@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sounds/Test.wav</SourceFile>
+  <SourceTime>2009-06-10T17:40:30.9611233-03:00</SourceTime>
+  <DestFile>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/bin/Windows/Sounds/Test.xnb</DestFile>
+  <DestTime>2017-04-19T20:18:31.3168972-03:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2015-04-29T14:14:44-03:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2015-04-29T14:14:44-03:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

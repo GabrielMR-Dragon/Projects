@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -48,6 +49,9 @@ namespace Tic_Tac_Toe
         Texture2D cpuO;
         Texture2D cpuX;
 
+        //Sounds
+        SoundEffect sndTest;
+
         //Fonts
         SpriteFont fontNormal;
 
@@ -81,7 +85,12 @@ namespace Tic_Tac_Toe
 
                 case GameState.MachineTurn:
                     {
+                        //printBoard();
 
+                        if (board.isGameOver())
+                            enterGameState(GameState.ShowResults);
+                        else
+                            enterGameState(GameState.PlayerTurn);
                     }
                     break;
 
@@ -178,7 +187,7 @@ namespace Tic_Tac_Toe
             {
                 case GameState.Menu:
                     {
-
+                        printMenu(gameTime);
                     }
                     break;
 
@@ -264,6 +273,9 @@ namespace Tic_Tac_Toe
             buttonStartGamePlayerMachine = new Classes.UIButton(new Vector2(10, 140), new Vector2(512, 50), cellEmpty, "Jogador Vs. Máquina", fontNormal);
             buttonQuit = new Classes.UIButton(new Vector2(10, 210), new Vector2(128, 50), cellEmpty, "Sair", fontNormal);
 
+            //Carrega os sons do jogo
+            sndTest = Content.Load<SoundEffect>("Sounds/Test");
+
             //Entra em estado inicial
             enterGameState(GameState.Menu);
         }
@@ -297,11 +309,13 @@ namespace Tic_Tac_Toe
             //Inicia desenhos
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied);
 
-            if (gameStarted)
-                printBoard(gameTime);
-            else
-                printMenu(gameTime);
-            
+            //if (gameStarted)
+            //    printBoard(gameTime);
+            //else
+            //    printMenu(gameTime);
+
+            drawGameState(gameTime);
+
             //Finaliza desenhos
             spriteBatch.End();
 

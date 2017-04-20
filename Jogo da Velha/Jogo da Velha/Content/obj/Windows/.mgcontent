@@ -4,13 +4,14 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Gabriel/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/CellEmpty.png</File>
-    <File>D:/Gabriel/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/CellO.png</File>
-    <File>D:/Gabriel/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/CellX.png</File>
-    <File>D:/Gabriel/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Fonts/Normal.spritefont</File>
-    <File>D:/Gabriel/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerO.png</File>
-    <File>D:/Gabriel/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerX.png</File>
-    <File>D:/Gabriel/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUO.png</File>
-    <File>D:/Gabriel/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUX.png</File>
+    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/CellEmpty.png</File>
+    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/CellO.png</File>
+    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/CellX.png</File>
+    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Fonts/Normal.spritefont</File>
+    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerO.png</File>
+    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerX.png</File>
+    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUO.png</File>
+    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUX.png</File>
+    <File>C:/Users/17192475/Downloads/Projects-master/Jogo da Velha/Jogo da Velha/Content/Sounds/Test.wav</File>
   </SourceFiles>
 </SourceFileCollection>
