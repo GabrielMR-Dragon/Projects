@@ -7,47 +7,36 @@ namespace Tic_Tac_Toe.Classes
 {
     public class Player
     {
-        private int score;
-        private bool circle; //Define se é círculo ou x
-        private string name;
+        private int playerNumber; //1 ou 2
+        private bool machine; //Define se é humano ou máquina
 
         //Construtor
-        public Player(string name)
+        public Player(int playerNumber, bool machine)
         {
-            this.name = name;
-            score = 0;
+            this.playerNumber = playerNumber;
+            this.machine = machine;
         }
 
         //Setters
-        public void setScore(int score)
+        public void setPlayerNumber(int playerNumber)
         {
-            this.score = score;
+            this.playerNumber = playerNumber;
         }
 
-        public void setCircle(bool circle)
+        public void setMachine(bool machine)
         {
-            this.circle = circle;
-        }
-
-        public void setName(string name)
-        {
-            this.name = name;
+            this.machine = machine;
         }
 
         //Getters
-        public int getScore()
+        public int getPlayerNumber()
         {
-            return score;
+            return playerNumber;
         }
 
-        public bool isCircle()
+        public bool isMachine()
         {
-            return circle;
-        }
-
-        public string getName()
-        {
-            return name;
+            return machine;
         }
     }
 }

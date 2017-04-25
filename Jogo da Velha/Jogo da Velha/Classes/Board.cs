@@ -11,13 +11,12 @@ namespace Tic_Tac_Toe.Classes
     public class Board
     {
         //Cell values:
-        //0 = empty
-        //1 = computer
-        //2 = human
+        //0 = empty | 1 = Primeiro player a fazer a jogada | 2 = Segundo player a fazer a jogada
 
         private int player = 0;
         public int[,] cell = new int[3, 3];
         private int depth = 0;
+        private Player[] players = new Player[2]; //Vetor com a informação dos jogadores
 
         //Construtor
         public Board()
@@ -26,7 +25,13 @@ namespace Tic_Tac_Toe.Classes
         }
 
         //Setters
-        public void setPlayer()
+        public void setPlayers(Player player1, Player player2)
+        {
+            players[0] = player1;
+            players[1] = player2;
+        } 
+
+        public void setPlayer() //Alterna o jogador
         {
             if (player == 1)
                 player = 2;
@@ -40,7 +45,12 @@ namespace Tic_Tac_Toe.Classes
         }
 
         //Getters
-        public int getPlayer()
+        public Player[] getPlayers()
+        {
+            return players;
+        }
+
+        public int getPlayer() //Obtém o jogador a fazer a jogada
         {
             return player;
         }
@@ -65,12 +75,19 @@ namespace Tic_Tac_Toe.Classes
         {
             int winner = gameOver();
 
-            if (winner == 1)
-                return 1;
-            else if (winner == 2)
-                return -1;
+            if (players[0].getPlayerNumber() == winner) //Se o primeiro jogador for o vencedor
+                if (players[0].isMachine()) //Checa se é a máquina
+                    return 1; //Retorna 1 se verdadeiro
+                else
+                    return -1; //Retorna -1 se falso
+
+            else if (players[1].getPlayerNumber() == winner) //Se o segundo jogador for o vencedor
+                if (players[1].isMachine()) //Checa se é a máquina
+                    return 1; //Retorna 1 se verdadeiro
+                else
+                    return -1; //Retorna -1 se falso
             else
-                return 0;
+                return 0; //Senão, retorna 0
         }
 
         public bool isGameOver()
@@ -125,6 +142,7 @@ namespace Tic_Tac_Toe.Classes
                     copy.cell[x, y] = cell[x, y];
 
             copy.player = player;
+            copy.players = players;
 
             return copy;
         }
@@ -153,31 +171,41 @@ namespace Tic_Tac_Toe.Classes
 
         static public int Minimax(Board board, int depth, int player)
         {
-            //if gameOver(tabuleiro) ou depth == 0
-            //return CalcularScore(tabuleiro)
-
             if (board.isGameOver() || depth == 0)
                 return board.getScore();
 
             int value;
 
-            if(player == 2)
+            int humano, maquina;
+
+            if (board.players[0].isMachine())
+            {
+                maquina = 0;
+                humano = 1;
+            }
+            else
+            {
+                humano = 0;
+                maquina = 1;
+            }
+
+            if(player == board.players[humano].getPlayerNumber())
             {
                 value = 9999999;
 
-                List<Board> possibilities = board.getPossibilities(2);
+                List<Board> possibilities = board.getPossibilities(board.players[humano].getPlayerNumber());
 
                 foreach(Board p in possibilities)
-                    value = Math.Min(value, Minimax(p, depth - 1, 1 /* Máquina */));
+                    value = Math.Min(value, Minimax(p, depth - 1, board.players[maquina].getPlayerNumber()));
             }
             else
             {
                 value = -9999999;
 
-                List<Board> possibilities = board.getPossibilities(1);
+                List<Board> possibilities = board.getPossibilities(board.players[maquina].getPlayerNumber());
 
                 foreach(Board p in possibilities)
-                    value = Math.Max(value, Minimax(p, depth - 1, 2 /* Humano */));
+                    value = Math.Max(value, Minimax(p, depth - 1, board.players[humano].getPlayerNumber()));
             }
 
             return value;

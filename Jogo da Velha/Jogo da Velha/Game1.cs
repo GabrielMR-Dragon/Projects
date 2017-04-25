@@ -109,6 +109,7 @@ namespace Tic_Tac_Toe
                             if (buttonStartGamePlayerPlayer.testClick(mousePointer))
                             {
                                 playerVsPlayer = true;
+                                board.setPlayers(new Classes.Player(1, false), new Classes.Player(2, false));
                                 board.setPlayer();
                                 enterGameState(GameState.PlayerTurn);
                             }
@@ -116,8 +117,20 @@ namespace Tic_Tac_Toe
                             else if (buttonStartGamePlayerMachine.testClick(mousePointer))
                             {
                                 playerVsPlayer = false;
-                                board.setPlayer();
-                                enterGameState(GameState.MachineTurn);
+
+                                if (machineIsFirst)
+                                {
+                                    board.setPlayers(new Classes.Player(1, true), new Classes.Player(2, false));
+                                    board.setPlayer();
+                                    enterGameState(GameState.MachineTurn);
+                                }
+                                    
+                                else
+                                {
+                                    board.setPlayers(new Classes.Player(1, false), new Classes.Player(2, true));
+                                    board.setPlayer();
+                                    enterGameState(GameState.PlayerTurn);
+                                }
                             }
 
                             else if (buttonQuit.testClick(mousePointer))
@@ -549,10 +562,10 @@ namespace Tic_Tac_Toe
                 spriteBatch.Draw(cpuO, new Vector2(0f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
 
             else if (board.getPlayer() == 1 && playerVsPlayer == false && machineIsFirst == false)
-                spriteBatch.Draw(playerO, new Vector2(0f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
+                spriteBatch.Draw(playerO, new Vector2(0f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
 
             else if (board.getPlayer() == 2 && playerVsPlayer == false && machineIsFirst == false)
-                spriteBatch.Draw(cpuX, new Vector2(599f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
+                spriteBatch.Draw(cpuX, new Vector2(599f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
 
             else if (board.getPlayer() == 2 && playerVsPlayer == false && machineIsFirst)
                 spriteBatch.Draw(playerX, new Vector2(599f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
