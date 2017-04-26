@@ -1,0 +1,16 @@
+
+	To Do List:
+	
+	-> Fazer máquina não determinística
+	
+	-> Fazer botão de dificuldade / máquina fácil
+	
+	-> Sons!
+	
+	-> Re-organizar menu!
+	
+	-> Personalizar skin do jogo!
+	
+	-> Contador de tempo da partida.
+	
+	-> Fazer máquina esperar 1 segundo antes de jogar.
