@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
 using System.Collections.Generic;
 using System.Threading;
+using System;
 
 namespace Tic_Tac_Toe
 {
@@ -214,6 +215,9 @@ namespace Tic_Tac_Toe
                         List<Classes.Board> possibilities = board.getPossibilities(board.getPlayer());
 
                         Classes.Board bestPossibility = null;
+                        List<Classes.Board> bestPossibilities = new List<Classes.Board>();
+                        List<int> bestScores = new List<int>();
+
                         int bestScore = -9999999;
 
                         foreach (Classes.Board possibility in possibilities)
@@ -221,16 +225,29 @@ namespace Tic_Tac_Toe
                             possibility.setPlayer(); //Altera para o jogador humano
                             int temporary = Classes.Board.Minimax(possibility, possibility.getDepth() - 1, possibility.getPlayer()); //Diminui profundidade
 
-                            if (temporary > bestScore)
+                            if (temporary >= bestScore)
                             {
+                                //bestScore = temporary;
+                                //bestPossibility = possibility;
+
                                 bestScore = temporary;
-                                bestPossibility = possibility;
+                                bestPossibilities.Add(possibility);
+                                bestScores.Add(bestScore);
                             }
                         }
 
+                        Random random = new Random();
+                        int randomPossibility;
 
-                        while (dt <= 1)
-                            dt = contaTempo(gameTime, dt);
+                        do
+                        {
+                            randomPossibility = random.Next(0, bestPossibilities.Count);
+                        }
+                        while (bestScores[randomPossibility] < bestScore);
+
+                        bestPossibility = bestPossibilities[randomPossibility];
+
+                        //TODO WAIT TIME
                         board = bestPossibility;              //Realiza jogada e altera jogador
                         board.setDepth(board.getDepth() - 1); //Diminui profundidade do tabuleiro
 
@@ -470,6 +487,8 @@ namespace Tic_Tac_Toe
                     List<Classes.Board> possibilities = board.getPossibilities(board.getPlayer());
 
                     Classes.Board bestPossibility = null;
+                    List<Classes.Board> bestPossibilities = null;
+                    List<int> bestScores = null;
                     int bestScore = -9999999;
 
                     foreach (Classes.Board possibility in possibilities)
@@ -480,11 +499,23 @@ namespace Tic_Tac_Toe
                         if (temporary > bestScore)
                         {
                             bestScore = temporary;
-                            bestPossibility = possibility;
+                            bestPossibilities.Add(possibility);
+                            bestScores.Add(bestScore);
                         }
                     }
 
-                    Thread.Sleep(1000);                   //TODO: SUBSTITUIR por um timer manual
+                    Random random = new Random();
+                    int randomPossibility;
+
+                    do
+                        {
+                            randomPossibility = random.Next(0, bestPossibilities.Count);
+                        }
+                    while (bestScores[randomPossibility] < bestScore) ;
+
+                    bestPossibility = bestPossibilities[randomPossibility];
+
+                    //Thread.Sleep(1000);                   //TODO: SUBSTITUIR por um timer manual
                     board = bestPossibility;              //Realiza jogada e altera jogador
                     board.setDepth(board.getDepth() - 1); //Diminui profundidade do tabuleiro
                 }

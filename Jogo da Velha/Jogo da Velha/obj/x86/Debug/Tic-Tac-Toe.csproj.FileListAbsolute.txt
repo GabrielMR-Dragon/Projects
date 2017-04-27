@@ -101,7 +101,6 @@ C:\Users\17192475\Downloads\Projects-master\Jogo da Velha\Jogo da Velha\bin\Wind
 C:\Users\17192475\Downloads\Projects-master\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\17192475\Downloads\Projects-master\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.csprojResolveAssemblyReference.cache
 C:\Users\17192475\Downloads\Projects-master\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sounds\Test.xnb
-H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D11.xml
 D:\Gabriel\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\pacman.png
 D:\Gabriel\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Fonts\Normal.xnb
 D:\Gabriel\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sounds\Test.xnb
@@ -162,10 +161,12 @@ H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\MonoGame.Framework.xm
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.MediaFoundation.xml
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.xml
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XAudio2.xml
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D11.xml
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.DXGI.xml
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct2D1.xml
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XInput.xml
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.RawInput.xml
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D9.xml
+H:\workspace\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.csprojResolveAssemblyReference.cache
 H:\workspace\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.exe
 H:\workspace\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.pdb

@@ -1,7 +1,5 @@
-
+﻿
 	To Do List:
-	
-	-> Fazer máquina não determinística
 	
 	-> Fazer botão de dificuldade / máquina fácil
 	
