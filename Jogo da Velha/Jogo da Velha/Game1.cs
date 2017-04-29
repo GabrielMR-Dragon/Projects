@@ -38,6 +38,8 @@ namespace Tic_Tac_Toe
         //Flags
         bool playerVsPlayer; //Diz se é humano versus humano.
         bool machineIsFirst = true; //Diz se a máquina é o primeiro jogador ou não.
+        bool humanIsX = true; //Diz se o humano é X.
+        bool maxDifficulty = true; //Diz se é dificuldade máxima.
 
         //Sprites
         Texture2D cellEmpty;
@@ -57,6 +59,9 @@ namespace Tic_Tac_Toe
         //Buttons
         Classes.UIButton buttonStartGamePlayerPlayer;
         Classes.UIButton buttonStartGamePlayerMachine;
+        Classes.UIButton buttonMachineIsFirst;
+        Classes.UIButton buttonHumanIsX;
+        Classes.UIButton buttonMaxDifficulty;
         Classes.UIButton buttonQuit;
 
         //Posição do mouse
@@ -110,7 +115,7 @@ namespace Tic_Tac_Toe
                             if (buttonStartGamePlayerPlayer.testClick(mousePointer))
                             {
                                 playerVsPlayer = true;
-                                board.setPlayers(new Classes.Player(1, false), new Classes.Player(2, false));
+                                board.setPlayers(new Classes.Player(1, false, cellO), new Classes.Player(2, false, cellX));
                                 board.setPlayer();
                                 enterGameState(GameState.PlayerTurn);
                             }
@@ -121,14 +126,22 @@ namespace Tic_Tac_Toe
 
                                 if (machineIsFirst)
                                 {
-                                    board.setPlayers(new Classes.Player(1, true), new Classes.Player(2, false));
+                                    if (humanIsX)
+                                        board.setPlayers(new Classes.Player(1, true, cellO), new Classes.Player(2, false, cellX));
+                                    else
+                                        board.setPlayers(new Classes.Player(1, true, cellX), new Classes.Player(2, false, cellO));
+
                                     board.setPlayer();
                                     enterGameState(GameState.MachineTurn);
                                 }
                                     
                                 else
                                 {
-                                    board.setPlayers(new Classes.Player(1, false), new Classes.Player(2, true));
+                                    if (humanIsX)
+                                        board.setPlayers(new Classes.Player(1, false, cellX), new Classes.Player(2, true, cellO));
+                                    else
+                                        board.setPlayers(new Classes.Player(1, false, cellO), new Classes.Player(2, true, cellX));
+
                                     board.setPlayer();
                                     enterGameState(GameState.PlayerTurn);
                                 }
@@ -137,19 +150,45 @@ namespace Tic_Tac_Toe
                             else if (buttonQuit.testClick(mousePointer))
                                 Exit();
 
-                            if (Mouse.GetState().LeftButton == ButtonState.Pressed && prevMouseState.LeftButton == ButtonState.Released)
+                            if (buttonMachineIsFirst.testClick(mousePointer))
                             {
-                                Vector2 pMin = new Vector2(720, 128);
-
-                                Vector2 pMax = pMin + new Vector2(64, 64);
-
-                                if ((mousePointer.X > pMin.X) && (mousePointer.X < pMax.X) &&
-                                    (mousePointer.Y > pMin.Y) && (mousePointer.Y < pMax.Y))
+                                if (machineIsFirst)
                                 {
-                                    if (machineIsFirst)
-                                        machineIsFirst = false;
-                                    else
-                                        machineIsFirst = true;
+                                    machineIsFirst = false;
+                                    buttonMachineIsFirst.setText("1º");
+                                }
+                                else
+                                {
+                                    machineIsFirst = true;
+                                    buttonMachineIsFirst.setText("2º");
+                                }
+                            }
+                            
+                            if (buttonHumanIsX.testClick(mousePointer))
+                            {
+                                if (humanIsX)
+                                {
+                                    humanIsX = false;
+                                    buttonHumanIsX.setText("O");
+                                }
+                                else
+                                {
+                                    humanIsX = true;
+                                    buttonHumanIsX.setText("X");
+                                }
+                            }
+
+                            if (buttonMaxDifficulty.testClick(mousePointer))
+                            {
+                                if (maxDifficulty)
+                                {
+                                    maxDifficulty = false;
+                                    buttonMaxDifficulty.setText("Nrm");
+                                }
+                                else
+                                {
+                                    maxDifficulty = true;
+                                    buttonMaxDifficulty.setText("Max");
                                 }
                             }
                         }
@@ -201,56 +240,107 @@ namespace Tic_Tac_Toe
 
                 case GameState.MachineTurn:
                     {
-                        ////LÓGICA DIFICULDADE BAIXA:
-                        ////RANDOMIZAR JOGADAS DA MÁQUINA
-                        //
-                        //List<Classes.Board> possibilities = board.getPossibilities(1);
-                        //
-                        //board = possibilities[0];
-                        //
-                        ////RANDOMIZAR JOGADAS DA MÁQUINA
-
-                        //LÓGICA DIFICULDADE ALTA
-
-                        List<Classes.Board> possibilities = board.getPossibilities(board.getPlayer());
-
-                        Classes.Board bestPossibility = null;
-                        List<Classes.Board> bestPossibilities = new List<Classes.Board>();
-                        List<int> bestScores = new List<int>();
-
-                        int bestScore = -9999999;
-
-                        foreach (Classes.Board possibility in possibilities)
+                        //LÓGICA DIFICULDADE MÁXIMA
+                        if (maxDifficulty)
                         {
-                            possibility.setPlayer(); //Altera para o jogador humano
-                            int temporary = Classes.Board.Minimax(possibility, possibility.getDepth() - 1, possibility.getPlayer()); //Diminui profundidade
+                            List<Classes.Board> possibilities = board.getPossibilities(board.getPlayer());
 
-                            if (temporary >= bestScore)
+                            Classes.Board bestPossibility = null;
+                            List<Classes.Board> bestPossibilities = new List<Classes.Board>();
+                            List<int> bestScores = new List<int>();
+
+                            int bestScore = -9999999;
+
+                            foreach (Classes.Board possibility in possibilities)
                             {
-                                //bestScore = temporary;
-                                //bestPossibility = possibility;
+                                possibility.setPlayer(); //Altera para o jogador humano
+                                int temporary = Classes.Board.Minimax(possibility, possibility.getDepth() - 1, possibility.getPlayer()); //Diminui profundidade
 
-                                bestScore = temporary;
-                                bestPossibilities.Add(possibility);
-                                bestScores.Add(bestScore);
+                                if (temporary >= bestScore)
+                                {
+                                    bestScore = temporary;
+                                    bestPossibilities.Add(possibility);
+                                    bestScores.Add(bestScore);
+                                }
+                            }
+
+                            Random random = new Random();
+                            int randomPossibility;
+
+                            do
+                            {
+                                randomPossibility = random.Next(0, bestPossibilities.Count);
+                            }
+                            while (bestScores[randomPossibility] < bestScore);
+
+                            bestPossibility = bestPossibilities[randomPossibility];
+
+                            //TODO WAIT TIME
+                            board = bestPossibility;              //Realiza jogada e altera jogador
+                            board.setDepth(board.getDepth() - 1); //Diminui profundidade do tabuleiro
+                        }
+
+                        //LÓGICA DIFICULDADE NORMAL
+                        else
+                        {
+                            Random random = new Random();
+                            int randomPossibility;
+
+                            randomPossibility = random.Next(1, 10);
+
+                            if (randomPossibility >= 9)
+                            {
+                                List<Classes.Board> possibilities = board.getPossibilities(board.getPlayer());
+
+                                Classes.Board bestPossibility = null;
+                                List<Classes.Board> bestPossibilities = new List<Classes.Board>();
+                                List<int> bestScores = new List<int>();
+
+                                int bestScore = -9999999;
+
+                                foreach (Classes.Board possibility in possibilities)
+                                {
+                                    possibility.setPlayer(); //Altera para o jogador humano
+                                    int temporary = Classes.Board.Minimax(possibility, possibility.getDepth() - 1, possibility.getPlayer()); //Diminui profundidade
+
+                                    if (temporary >= bestScore)
+                                    {
+                                        bestScore = temporary;
+                                        bestPossibilities.Add(possibility);
+                                        bestScores.Add(bestScore);
+                                    }
+                                }
+
+                                do
+                                {
+                                    randomPossibility = random.Next(0, bestPossibilities.Count);
+                                }
+                                while (bestScores[randomPossibility] < bestScore);
+
+                                bestPossibility = bestPossibilities[randomPossibility];
+
+                                //TODO WAIT TIME
+                                board = bestPossibility;              //Realiza jogada e altera jogador
+                                board.setDepth(board.getDepth() - 1); //Diminui profundidade do tabuleiro
+                            }
+
+                            else
+                            {
+                                List<Classes.Board> possibilities = board.getPossibilities(board.getPlayer());
+
+                                Classes.Board possibility = null;
+
+                                randomPossibility = random.Next(0, possibilities.Count);
+
+                                possibility = possibilities[randomPossibility];
+
+                                //TODO WAIT TIME
+                                board = possibility; //Realiza jogada
+                                board.setPlayer(); //Altera jogador
+                                board.setDepth(board.getDepth() - 1); //Diminui profundidade do tabuleiro
                             }
                         }
-
-                        Random random = new Random();
-                        int randomPossibility;
-
-                        do
-                        {
-                            randomPossibility = random.Next(0, bestPossibilities.Count);
-                        }
-                        while (bestScores[randomPossibility] < bestScore);
-
-                        bestPossibility = bestPossibilities[randomPossibility];
-
-                        //TODO WAIT TIME
-                        board = bestPossibility;              //Realiza jogada e altera jogador
-                        board.setDepth(board.getDepth() - 1); //Diminui profundidade do tabuleiro
-
+                        
                         if (board.isGameOver())
                             enterGameState(GameState.ShowResults);
                         else
@@ -362,9 +452,14 @@ namespace Tic_Tac_Toe
             //Carrega as fontes para o jogo
             fontNormal = Content.Load<SpriteFont>("Fonts/Normal");
 
-            buttonStartGamePlayerPlayer = new Classes.UIButton(new Vector2(10, 70), new Vector2(512, 50), cellEmpty, "Jogador Vs. Jogador", fontNormal);
-            buttonStartGamePlayerMachine = new Classes.UIButton(new Vector2(10, 140), new Vector2(512, 50), cellEmpty, "Jogador Vs. Máquina", fontNormal);
-            buttonQuit = new Classes.UIButton(new Vector2(10, 210), new Vector2(128, 50), cellEmpty, "Sair", fontNormal);
+            buttonStartGamePlayerPlayer = new Classes.UIButton(new Vector2(194, 70), new Vector2(412, 50), cellEmpty, "Jogador Vs. Jogador", fontNormal);
+            buttonStartGamePlayerMachine = new Classes.UIButton(new Vector2(194, 260), new Vector2(412, 50), cellEmpty, "Jogador Vs. Máquina", fontNormal);
+
+            buttonMachineIsFirst = new Classes.UIButton(new Vector2(274, 346), new Vector2(64, 64), cellEmpty, "2º", fontNormal);
+            buttonHumanIsX = new Classes.UIButton(new Vector2(368, 346), new Vector2(64, 64), cellEmpty, "X", fontNormal);
+            buttonMaxDifficulty = new Classes.UIButton(new Vector2(462, 346), new Vector2(64, 64), cellEmpty, "Max", fontNormal);
+
+            buttonQuit = new Classes.UIButton(new Vector2(336, 450), new Vector2(128, 50), cellEmpty, "Sair", fontNormal);
 
             //Carrega os sons do jogo
             sndTest = Content.Load<SoundEffect>("Sounds/Test");
@@ -392,7 +487,7 @@ namespace Tic_Tac_Toe
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             //Inicia desenhos
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied);
@@ -431,147 +526,15 @@ namespace Tic_Tac_Toe
             buttonStartGamePlayerMachine.Draw(spriteBatch);
             buttonQuit.Draw(spriteBatch);
 
-            Vector2 cellPos = new Vector2(720, 128);
-
-            spriteBatch.Draw(cellEmpty, cellPos);
-
-            if (machineIsFirst == true)
-                spriteBatch.Draw(cellX, cellPos, Color.Red);
-            else
-                spriteBatch.Draw(cellO, cellPos, Color.Blue);
-        }
-
-
-        //MÉTODO OBSOLETO: NÃO UTILIZADO
-        private void logicBoard(GameTime gameTime) //Lógica do tabuleiro
-        {
-            if (playerVsPlayer)
-            {
-                if (Mouse.GetState().LeftButton == ButtonState.Pressed && prevMouseState.LeftButton == ButtonState.Released)
-                {
-                    //Posição do mouse
-                    mousePointer = new Vector2(Mouse.GetState().Position.X,
-                                               Mouse.GetState().Position.Y);
-
-                    if (buttonQuit.testClick(mousePointer))
-                    {
-                        board.Clear();
-                        return;
-                    }
-
-                    for (int y = 0; y < 3; y++)
-                    {
-                        for (int x = 0; x < 3; x++)
-                        {
-                            Vector2 pMin = new Vector2(x * 64 + getScreenSize(true, 64, 3),
-                                                       y * 64 + getScreenSize(false, 64, 3));
-
-                            Vector2 pMax = pMin + new Vector2(64, 64);
-
-                            if ((mousePointer.X > pMin.X) && (mousePointer.X < pMax.X) &&
-                                (mousePointer.Y > pMin.Y) && (mousePointer.Y < pMax.Y) && board.cell[x, y] == 0)
-                            {
-                                board.cell[x, y] = board.getPlayer();
-
-                                board.setPlayer();                    //Altera o jogador
-                                board.setDepth(board.getDepth() - 1); //Diminui a profunidade do tabuleiro
-                            }
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (board.getPlayer() == 1)
-                {
-                    List<Classes.Board> possibilities = board.getPossibilities(board.getPlayer());
-
-                    Classes.Board bestPossibility = null;
-                    List<Classes.Board> bestPossibilities = null;
-                    List<int> bestScores = null;
-                    int bestScore = -9999999;
-
-                    foreach (Classes.Board possibility in possibilities)
-                    {
-                        possibility.setPlayer(); //Altera para o jogador humano
-                        int temporary = Classes.Board.Minimax(possibility, possibility.getDepth() - 1, possibility.getPlayer()); //Diminui profundidade
-
-                        if (temporary > bestScore)
-                        {
-                            bestScore = temporary;
-                            bestPossibilities.Add(possibility);
-                            bestScores.Add(bestScore);
-                        }
-                    }
-
-                    Random random = new Random();
-                    int randomPossibility;
-
-                    do
-                        {
-                            randomPossibility = random.Next(0, bestPossibilities.Count);
-                        }
-                    while (bestScores[randomPossibility] < bestScore) ;
-
-                    bestPossibility = bestPossibilities[randomPossibility];
-
-                    //Thread.Sleep(1000);                   //TODO: SUBSTITUIR por um timer manual
-                    board = bestPossibility;              //Realiza jogada e altera jogador
-                    board.setDepth(board.getDepth() - 1); //Diminui profundidade do tabuleiro
-                }
-
-                else if (Mouse.GetState().LeftButton == ButtonState.Pressed && prevMouseState.LeftButton == ButtonState.Released && board.getPlayer() == 2)
-                {
-                    //Posição do mouse
-                    mousePointer = new Vector2(Mouse.GetState().Position.X,
-                                               Mouse.GetState().Position.Y);
-
-                    if (buttonQuit.testClick(mousePointer))
-                    {
-                        board.Clear();
-                        return;
-                    }
-
-                    for (int y = 0; y < 3; y++)
-                    {
-                        for (int x = 0; x < 3; x++)
-                        {
-                            Vector2 pMin = new Vector2(x * 64 + getScreenSize(true, 64, 3),
-                                                       y * 64 + getScreenSize(false, 64, 3));
-
-                            Vector2 pMax = pMin + new Vector2(64, 64);
-
-                            if ((mousePointer.X > pMin.X) && (mousePointer.X < pMax.X) &&
-                                (mousePointer.Y > pMin.Y) && (mousePointer.Y < pMax.Y) && board.cell[x, y] == 0)
-                            {
-                                board.cell[x, y] = board.getPlayer();
-
-                                board.setPlayer();                    //Altera o jogador
-                                board.setDepth(board.getDepth() - 1); //Diminui a profunidade do tabuleiro
-                            }
-                        }
-                    }
-                }
-            }
-
-            prevMouseState = Mouse.GetState();
-
-            int vencedor = 0;
-            vencedor = board.gameOver();
-
-            if (vencedor > 0)
-            {
-                System.Console.WriteLine("Jogador vencedor: " + vencedor);
-            }
-            else if(vencedor == 0 && board.isGameOver())
-            {
-                System.Console.WriteLine("Empate.");
-            }
+            buttonMachineIsFirst.Draw(spriteBatch);
+            buttonHumanIsX.Draw(spriteBatch);
+            buttonMaxDifficulty.Draw(spriteBatch);
         }
 
         private void printBoard(GameTime gameTime) //Desenho do tabuleiro
         {
-            buttonQuit.Draw(spriteBatch);
+            if (currentState != GameState.ShowResults)
+                buttonQuit.Draw(spriteBatch);
 
             string text = "Tic-Tac-Toe!";
             string currentTime = "Elapsed time: ";
@@ -583,23 +546,39 @@ namespace Tic_Tac_Toe
 
             spriteBatch.DrawString(fontNormal, currentTime, new Vector2(400, 560), Color.White, 0.0f, textSize * 0.5f, Vector2.One, SpriteEffects.None, 0f);
 
-            if (board.getPlayer() == 1 && playerVsPlayer)
-                spriteBatch.Draw(playerO, new Vector2(0f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
+            if (currentState != GameState.ShowResults)
+            {
+                if (board.getPlayer() == 1 && playerVsPlayer)
+                    spriteBatch.Draw(playerO, new Vector2(0f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
 
-            else if (board.getPlayer() == 2 && playerVsPlayer)
-                spriteBatch.Draw(playerX, new Vector2(599f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
+                else if (board.getPlayer() == 2 && playerVsPlayer)
+                    spriteBatch.Draw(playerX, new Vector2(599f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
+                
+                if (board.getPlayer() == 1 && playerVsPlayer == false && board.getPlayers()[0].isMachine() && humanIsX)
+                    spriteBatch.Draw(cpuO, new Vector2(0f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
+                
+                else if (board.getPlayer() == 1 && playerVsPlayer == false && board.getPlayers()[0].isMachine() == false && humanIsX)
+                    spriteBatch.Draw(playerX, new Vector2(0f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
+                
+                else if (board.getPlayer() == 1 && playerVsPlayer == false && board.getPlayers()[0].isMachine() && humanIsX == false)
+                    spriteBatch.Draw(cpuX, new Vector2(0f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
 
-            if (board.getPlayer() == 1 && playerVsPlayer == false && machineIsFirst)
-                spriteBatch.Draw(cpuO, new Vector2(0f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
+                else if (board.getPlayer() == 1 && playerVsPlayer == false && board.getPlayers()[0].isMachine() == false && humanIsX == false)
+                    spriteBatch.Draw(playerO, new Vector2(0f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
 
-            else if (board.getPlayer() == 1 && playerVsPlayer == false && machineIsFirst == false)
-                spriteBatch.Draw(playerO, new Vector2(0f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
+                else if (board.getPlayer() == 2 && playerVsPlayer == false && board.getPlayers()[1].isMachine() && humanIsX)
+                    spriteBatch.Draw(cpuO, new Vector2(599f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
+                
+                else if (board.getPlayer() == 2 && playerVsPlayer == false && board.getPlayers()[1].isMachine() == false && humanIsX)
+                    spriteBatch.Draw(playerX, new Vector2(599f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
 
-            else if (board.getPlayer() == 2 && playerVsPlayer == false && machineIsFirst == false)
-                spriteBatch.Draw(cpuX, new Vector2(599f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
+                else if (board.getPlayer() == 2 && playerVsPlayer == false && board.getPlayers()[1].isMachine() && humanIsX == false)
+                    spriteBatch.Draw(cpuX, new Vector2(599f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
 
-            else if (board.getPlayer() == 2 && playerVsPlayer == false && machineIsFirst)
-                spriteBatch.Draw(playerX, new Vector2(599f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
+                else if (board.getPlayer() == 2 && playerVsPlayer == false && board.getPlayers()[1].isMachine() == false && humanIsX == false)
+                    spriteBatch.Draw(playerO, new Vector2(599f, 479f), null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
+
+            }
 
             for (int y = 0; y < 3; y++)
             {
@@ -611,9 +590,9 @@ namespace Tic_Tac_Toe
                     spriteBatch.Draw(cellEmpty, cellPos);
 
                     if (board.cell[x, y] == 1)
-                        spriteBatch.Draw(cellO, cellPos, null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
+                        spriteBatch.Draw(board.getPlayers()[0].getModel(), cellPos, null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Blue, SpriteEffects.None, 0f);
                     else if (board.cell[x, y] == 2)
-                        spriteBatch.Draw(cellX, cellPos, null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
+                        spriteBatch.Draw(board.getPlayers()[1].getModel(), cellPos, null, null, new Vector2(0f, 0f), 0f, new Vector2(1f, 1f), Color.Red, SpriteEffects.None, 0f);
                 }
             }
         }
@@ -624,9 +603,15 @@ namespace Tic_Tac_Toe
 
             if (board.gameOver() == 1 && playerVsPlayer)
                 text = "Player 1 wins!";
-            else if (board.gameOver() == 1 && playerVsPlayer == false)
+            else if (board.gameOver() == 2 && playerVsPlayer)
+                text = "Player 2 wins!";
+            else if (board.gameOver() == 1 && playerVsPlayer == false && board.getPlayers()[0].isMachine())
                 text = "Machine wins!";
-            else if (board.gameOver() == 2)
+            else if (board.gameOver() == 1 && playerVsPlayer == false && board.getPlayers()[0].isMachine() == false)
+                text = "Player 1 wins!";
+            else if (board.gameOver() == 2 && playerVsPlayer == false && board.getPlayers()[1].isMachine())
+                text = "Machine wins!";
+            else if (board.gameOver() == 2 && playerVsPlayer == false && board.getPlayers()[1].isMachine() == false)
                 text = "Player 2 wins!";
             else
                 text = "It's a draw!";

@@ -24,6 +24,26 @@ namespace Tic_Tac_Toe.Classes
             this.font = font;
         }
 
+        public void setText(string text)
+        {
+            this.text = text;
+        }
+
+        public void setBackground(Texture2D background)
+        {
+            this.background = background;
+        }
+
+        public string getText()
+        {
+            return text;
+        }
+
+        public Texture2D getBackground()
+        {
+            return background;
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(background, position, null, Color.White, 0.0f, Vector2.Zero, new Vector2(size.X / background.Width, size.Y / background.Height), SpriteEffects.None, 0.0f);
@@ -45,7 +65,7 @@ namespace Tic_Tac_Toe.Classes
         public bool testClick(Vector2 testPosition)
         {
             if ((testPosition.X > position.X) && (testPosition.X < position.X + size.X) &&
-               (testPosition.Y > position.Y) && (testPosition.Y < position.Y + size.Y))
+                (testPosition.Y > position.Y) && (testPosition.Y < position.Y + size.Y))
                 return true;
             else
                 return false;

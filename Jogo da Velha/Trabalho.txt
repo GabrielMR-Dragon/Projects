@@ -1,8 +1,6 @@
 ﻿
 	To Do List:
 	
-	-> Fazer botão de dificuldade / máquina fácil
-	
 	-> Sons!
 	
 	-> Re-organizar menu!
