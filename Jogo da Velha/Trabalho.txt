@@ -3,10 +3,6 @@
 	
 	-> Sons!
 	
-	-> Re-organizar menu!
-	
 	-> Personalizar skin do jogo!
-	
-	-> Contador de tempo da partida.
 	
 	-> Fazer máquina esperar 1 segundo antes de jogar.

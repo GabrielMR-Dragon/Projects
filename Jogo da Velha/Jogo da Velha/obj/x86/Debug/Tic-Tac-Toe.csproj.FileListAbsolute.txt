@@ -170,9 +170,7 @@ H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D9.xml
 H:\workspace\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.csprojResolveAssemblyReference.cache
 H:\workspace\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.exe
 H:\workspace\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.pdb
-D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\pacman.png
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Fonts\Normal.xnb
-D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sounds\Test.xnb
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellEmpty.xnb
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellO.xnb
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellX.xnb
@@ -203,4 +201,11 @@ D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.XInput.
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D9.xml
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.exe
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.pdb
-D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.csprojResolveAssemblyReference.cache
+D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sounds\Menu.xnb
+D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\biscoito.xnb
+D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\bolacha.xnb
+D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CPUBiscoito.xnb
+D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CPUBolacha.xnb
+D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerBiscoito.xnb
+D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerBolacha.xnb
+D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\Background.xnb
