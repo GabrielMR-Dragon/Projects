@@ -134,9 +134,7 @@ D:\Gabriel\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX
 D:\Gabriel\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\SharpDX.Direct3D9.xml
 D:\Gabriel\GitHub\Projects\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.exe
 D:\Gabriel\GitHub\Projects\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.pdb
-H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\pacman.png
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Fonts\Normal.xnb
-H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sounds\Test.xnb
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellEmpty.xnb
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellO.xnb
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellX.xnb
@@ -209,3 +207,13 @@ D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerBiscoito.xnb
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerBolacha.xnb
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\Background.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sounds\Menu.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\Background.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\Biscoito.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\Bolacha.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CPUBiscoito.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CPUBolacha.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerBiscoito.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerBolacha.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CPUStart.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerStart.xnb

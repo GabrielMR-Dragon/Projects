@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
 using System.Collections.Generic;
-using System.Threading;
 using System;
 
 namespace Tic_Tac_Toe
@@ -55,6 +54,8 @@ namespace Tic_Tac_Toe
         Texture2D cpuO;
         Texture2D cpuX;
         Texture2D background;
+        Texture2D cpuStart;
+        Texture2D playerStart;
 
         //Sounds
         SoundEffect sndMenuClick;
@@ -170,12 +171,12 @@ namespace Tic_Tac_Toe
                                 if (machineIsFirst)
                                 {
                                     machineIsFirst = false;
-                                    buttonMachineIsFirst.setText("1º");
+                                    buttonMachineIsFirst.setText(""); //1º
                                 }
                                 else
                                 {
                                     machineIsFirst = true;
-                                    buttonMachineIsFirst.setText("2º");
+                                    buttonMachineIsFirst.setText(""); //2º
                                 }
                             }
                             
@@ -472,6 +473,8 @@ namespace Tic_Tac_Toe
             playerX = Content.Load<Texture2D>("Sprites/PlayerBiscoito");
             cpuO = Content.Load<Texture2D>("Sprites/CPUBolacha");
             cpuX = Content.Load<Texture2D>("Sprites/CPUBiscoito");
+            cpuStart = Content.Load<Texture2D>("Sprites/CPUStart");
+            playerStart = Content.Load<Texture2D>("Sprites/PlayerStart");
 
             //Carrega as fontes para o jogo
             fontNormal = Content.Load<SpriteFont>("Fonts/Normal");
@@ -479,7 +482,7 @@ namespace Tic_Tac_Toe
             buttonStartGamePlayerPlayer = new Classes.UIButton(new Vector2(194, 191), new Vector2(412, 50), cellEmpty, "Jogador Vs. Jogador", fontNormal);
             buttonStartGamePlayerMachine = new Classes.UIButton(new Vector2(194, 275), new Vector2(412, 50), cellEmpty, "Jogador Vs. Máquina", fontNormal);
 
-            buttonMachineIsFirst = new Classes.UIButton(new Vector2(274, 355), new Vector2(64, 64), cellEmpty, "2º", fontNormal);
+            buttonMachineIsFirst = new Classes.UIButton(new Vector2(274, 355), new Vector2(64, 64), cellEmpty, "", fontNormal);
             buttonHumanIsX = new Classes.UIButton(new Vector2(368, 355), new Vector2(64, 64), cellEmpty, "", fontNormal);
             buttonMaxDifficulty = new Classes.UIButton(new Vector2(462, 355), new Vector2(64, 64), cellEmpty, "Max", fontNormal);
 
@@ -560,6 +563,11 @@ namespace Tic_Tac_Toe
 
             buttonMachineIsFirst.Draw(spriteBatch);
             buttonHumanIsX.Draw(spriteBatch);
+
+            if (machineIsFirst)
+                spriteBatch.Draw(cpuStart, new Vector2(274, 355));
+            else
+                spriteBatch.Draw(playerStart, new Vector2(274, 355));
 
             if (humanIsX)
                 spriteBatch.Draw(cellX, new Vector2(368, 355));
