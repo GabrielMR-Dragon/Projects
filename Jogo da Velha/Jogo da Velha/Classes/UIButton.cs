@@ -46,7 +46,7 @@ namespace Tic_Tac_Toe.Classes
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(background, position, null, Color.White, 0.0f, Vector2.Zero, new Vector2(size.X / background.Width, size.Y / background.Height), SpriteEffects.None, 0.0f);
+            spriteBatch.Draw(background, position, null, Color.White, 0.0f, Vector2.Zero, new Vector2(size.X / background.Width, size.Y / background.Height), SpriteEffects.None, 0.1f);
 
             Vector2 textSize = font.MeasureString(text);
 

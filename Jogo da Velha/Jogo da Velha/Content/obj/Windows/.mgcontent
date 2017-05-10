@@ -4,23 +4,19 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CellEmpty.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CellO.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CellX.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Fonts/Normal.spritefont</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerO.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerX.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUO.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUX.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sounds/Menu.wav</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUBolacha.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerBiscoito.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerBolacha.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUBiscoito.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/Bolacha.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/Background.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/Biscoito.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerStart.png</File>
-    <File>H:/workspace/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUStart.png</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/CellEmpty.png</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Fonts/Normal.spritefont</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sounds/Menu.wav</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUBolacha.png</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerBiscoito.png</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerBolacha.png</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUBiscoito.png</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/Bolacha.png</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/Background.png</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/Biscoito.png</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/PlayerStart.png</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sprites/CPUStart.png</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sounds/PlayerPlayed.wav</File>
+    <File>D:/GitHub/Projects/Jogo da Velha/Jogo da Velha/Content/Sounds/MachinePlayed.wav</File>
   </SourceFiles>
 </SourceFileCollection>

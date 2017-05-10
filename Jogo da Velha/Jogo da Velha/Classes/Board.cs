@@ -143,6 +143,7 @@ namespace Tic_Tac_Toe.Classes
 
             copy.player = player;
             copy.players = players;
+            copy.depth = depth;
 
             return copy;
         }

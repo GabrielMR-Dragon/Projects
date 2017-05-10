@@ -1,8 +1,4 @@
 ﻿
 	To Do List:
 	
-	-> Sons!
-	
-	-> Personalizar skin do jogo!
-	
-	-> Fazer máquina esperar 1 segundo antes de jogar.
+	-> Música!
