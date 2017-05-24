@@ -136,12 +136,6 @@ D:\Gabriel\GitHub\Projects\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe
 D:\Gabriel\GitHub\Projects\Jogo da Velha\Jogo da Velha\obj\x86\Debug\Tic-Tac-Toe.pdb
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Fonts\Normal.xnb
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellEmpty.xnb
-H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellO.xnb
-H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CellX.xnb
-H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CPUO.xnb
-H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\CPUX.xnb
-H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerO.xnb
-H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerX.xnb
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Tic-Tac-Toe.exe.config
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Tic-Tac-Toe.exe
 H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Tic-Tac-Toe.pdb
@@ -215,3 +209,5 @@ D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sprites\PlayerStart.xnb
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sounds\MachinePlayed.xnb
 D:\GitHub\Projects\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sounds\PlayerPlayed.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sounds\MachinePlayed.xnb
+H:\workspace\Jogo da Velha\Jogo da Velha\bin\Windows\Debug\Content\Sounds\PlayerPlayed.xnb
