@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C2136E92-00A5-42C9-9E0E-64CBFD0CFBBA}</ProjectGuid>
+    <ProjectGuid>{40240413-6CCD-4F87-A738-4AECA1732BE1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PrototipoMecanica3</RootNamespace>
