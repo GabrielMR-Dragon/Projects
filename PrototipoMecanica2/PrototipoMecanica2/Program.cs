@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesafioIA
+namespace PrototipoMecanica2
 {
 #if WINDOWS || LINUX
     /// <summary>
@@ -14,7 +14,7 @@ namespace DesafioIA
         [STAThread]
         static void Main()
         {
-            using (var game = new World())
+            using (var game = new Game1())
                 game.Run();
         }
     }
