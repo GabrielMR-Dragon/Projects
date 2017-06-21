@@ -1,0 +1,6 @@
+	Mudar o nome das cartas internamente
+
+	007 para Sabotagem
+	008 para Suborno
+
+	Precisa da fonte certa instalada na máquina.
